@@ -1,5 +1,9 @@
 # SecuenceClass
 Class which helps you to use a structure of Secuence of numbers or char if configured.
+Some features make no sense if you are working with characters. I highly recommend to comment
+those methods that can ruin your code. For example:
+	
+	-overload operator - makes no sense with characteres
 
 ## How to change between numbers or characters
 To change this you must follow two steps:
