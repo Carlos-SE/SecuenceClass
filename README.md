@@ -1,18 +1,18 @@
 # SecuenceClass
 Class which helps you to use a structure of Secuence of numbers or char if configured.
 
-#Languaje
+## Languaje
 It will be translated to english soon
 
-#./src
+## ./src
 This is the folder where Secuence.cpp is located. Main.cpp it is just a file with examples
 
-#./include
+## ./include
 The header file is here.
 
 
-#Compile
+## Compile
 	-linux: makefile compatible with g++
-#Contact
+## Contact
 	-csalaseiroa@correo.ugr.es
 	-carlossealternativo@gmail.com
