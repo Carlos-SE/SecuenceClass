@@ -3,6 +3,7 @@ Class which helps you to use a structure of Secuence of numbers or char if confi
 
 ## How to change between numbers or characters
 To change this you must follow two steps:
+
 	-Edit header file Secuencia.h. Where typedef ... TipoDato
 	 you can chage the definition
 	
