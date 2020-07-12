@@ -12,7 +12,7 @@ int main(void){
     sec2.setValor(1,0);
     sec2.rellenaSec();
     sec2.muestraSec();
-    sec2.setValor(5,0);
+    sec2.setValor(70,0);
     sec2.muestraSec();
 
     cout << "sec2 es mayo sec1: " << sec2.esMayor(sec1) << endl;
@@ -22,7 +22,7 @@ int main(void){
     cout << "Son iguales: " << sec1.esIgual(sec2) << endl;
     sec1.muestraSec();
 
-    sec2.aniade(50);
+    sec2.aniade('z');
     sec2.muestraSec();
     cout << "Son iguales: " << sec1.esIgual(sec2) << endl;
 

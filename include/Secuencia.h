@@ -1,18 +1,19 @@
 ///////////////////////////////////////////////////////////////////////////////
 //
-//
-//
+//  Made by Carlos Salas
+//  mail: csalaseiroa@correo.ugr.es or ca
 //
 //
 ///////////////////////////////////////////////////////////////////////////////
 #ifndef SECUENCIA
 #define SECUENCIA
 
+typedef char TipoDato;	// Tipo de los elementos de la estructura dinámica
 
 class Secuencia{
 private:
 
-    int *sec = 0;
+    TipoDato *sec = 0;
     int capacidad = 0;
     int totalUtilizados = 0;
 
@@ -29,17 +30,17 @@ public:
     void reservaMem(void);
     void reservaMem(int la_capacidad);
     void eliminaMem(void);
-    void setValor(int valor, int pos);
+    void setValor(TipoDato valor, int pos);
     void rellenaSec(void);
     void clonar(const Secuencia & otro);
-    void aniade(int valor);
+    void aniade(TipoDato valor);
     void aniade(const Secuencia & otro);
 
 //OBTENER VALORES
 
     void muestraSec(void);
-    int & getValor(int pos);
-    int & getValor(int pos) const;
+    TipoDato & getValor(int pos);
+    TipoDato & getValor(int pos) const;
     int getCapacidad(void);
     int getCapacidad(void) const;
     int getTotalUtilizados(void);

@@ -18,7 +18,7 @@ Secuencia :: ~Secuencia(void){
 //AJUSTAR SECUENCIA
 
 void Secuencia :: reservaMem(void){
-	sec = new int [capacidad];
+	sec = new TipoDato [capacidad];
 }
 void Secuencia :: reservaMem(int la_capacidad){
 
@@ -33,19 +33,19 @@ void Secuencia :: eliminaMem(void){
 	}
 }
 
-void Secuencia :: setValor(int valor, int pos){
+void Secuencia :: setValor(TipoDato valor, int pos){
 	sec[pos] = valor;
 }
 
 void Secuencia :: rellenaSec(void){
-	int valor;
+	TipoDato valor;
 	totalUtilizados = 0;
 
 	cout << "Introduzca los valores de la secuencia \
-	hasta completar la memoria o hasta el primer número negativo:";
+	hasta completar la memoria o hasta introducir un nº negativo:";
 	cin >> valor;
 
-	while(valor >= 0 && totalUtilizados < getCapacidad()){
+	while(valor != '#' && totalUtilizados < getCapacidad()){	//cambiar esto si TipoDato = char
 		setValor(valor, totalUtilizados);
 		totalUtilizados++;
 		cin >> valor;
@@ -63,7 +63,7 @@ void Secuencia :: clonar(const Secuencia & otro){
 	}
 }
 
-void Secuencia :: aniade(int valor){
+void Secuencia :: aniade(TipoDato valor){
 	int pos = getTotalUtilizados();
 
 	if(pos < getCapacidad()){
@@ -94,10 +94,10 @@ void Secuencia :: muestraSec(void){
 }
 
 
-int & Secuencia :: getValor(int pos){
+TipoDato & Secuencia :: getValor(int pos){
 	return sec[pos];
 }
-int & Secuencia :: getValor(int pos) const{
+TipoDato & Secuencia :: getValor(int pos) const{
 	return sec[pos];
 }
 
