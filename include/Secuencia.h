@@ -8,7 +8,7 @@
 #ifndef SECUENCIA
 #define SECUENCIA
 
-typedef char TipoDato;	// Tipo de los elementos de la estructura dinámica
+typedef double TipoDato;	// Tipo de los elementos de la estructura dinámica
 
 class Secuencia{
 private:
@@ -16,6 +16,10 @@ private:
     TipoDato *sec = 0;
     int capacidad = 0;
     int totalUtilizados = 0;
+
+    void reservaMem(void);
+    void reservaMem(int la_capacidad);
+    void eliminaMem(void);
 
 public:
 
@@ -27,14 +31,12 @@ public:
 
 //AJUSTAR SECUENCIA
 
-    void reservaMem(void);
-    void reservaMem(int la_capacidad);
-    void eliminaMem(void);
     void setValor(TipoDato valor, int pos);
     void rellenaSec(void);
     void clonar(const Secuencia & otro);
     void aniade(TipoDato valor);
     void aniade(const Secuencia & otro);
+    
 
 //OBTENER VALORES
 
@@ -48,6 +50,17 @@ public:
 
     bool esMayor(const Secuencia & otro); //Se basa unicamente en el tamaño
     bool esIgual(const Secuencia & otro); //Tienen que tener el mismo tam y números
+
+
+//SOBRECARGA OPERADORES
+
+    TipoDato & operator [] (int pos);
+
+    void operator = (const Secuencia & otro);
+
+    Secuencia & operator +(void);
+    Secuencia operator +(const Secuencia & otro);   //apendiza, no suma valores
+    Secuencia operator -(void);
 
 };
 #endif

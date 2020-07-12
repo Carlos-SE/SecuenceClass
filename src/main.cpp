@@ -22,12 +22,32 @@ int main(void){
     cout << "Son iguales: " << sec1.esIgual(sec2) << endl;
     sec1.muestraSec();
 
-    sec2.aniade('z');
+    sec2.aniade(777);
     sec2.muestraSec();
     cout << "Son iguales: " << sec1.esIgual(sec2) << endl;
 
     sec2.aniade(sec1);
     sec2.muestraSec();
     cout << "sec2 es mayo sec1: " << sec2.esMayor(sec1) << endl;
+
+    Secuencia sec3;
+
+    sec3=sec2;
+    sec3.muestraSec();
+
+    sec3= +sec2;
+    sec3.muestraSec();
+
+    sec3= -sec2;
+    sec3.muestraSec();
+
+    sec3[2] = 99;
+    sec3.muestraSec();
+    cout << sec3[2] << endl;
+
+    sec1 = sec1+sec3;
+    sec1.muestraSec();
+
+
     return 0;
 }

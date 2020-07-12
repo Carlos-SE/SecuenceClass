@@ -45,7 +45,7 @@ void Secuencia :: rellenaSec(void){
 	hasta completar la memoria o hasta introducir un nº negativo:";
 	cin >> valor;
 
-	while(valor != '#' && totalUtilizados < getCapacidad()){	//cambiar esto si TipoDato = char
+	while(valor >= 0 && totalUtilizados < getCapacidad()){	//cambiar esto si TipoDato = char
 		setValor(valor, totalUtilizados);
 		totalUtilizados++;
 		cin >> valor;
@@ -83,6 +83,7 @@ void Secuencia :: aniade(const Secuencia & otro){
 		contador++;
 	}
 }
+
 
 //OBTENER VALORES
 
@@ -133,4 +134,41 @@ bool Secuencia :: esIgual(const Secuencia & otro){
 	}
 
 	return iguales;
+}
+
+
+
+//sobrecarga operadores
+
+TipoDato & Secuencia :: operator [] (int pos){
+	return(getValor(pos));
+}
+
+
+void Secuencia :: operator = (const Secuencia & otro){
+	clonar(otro);
+}
+
+
+Secuencia & Secuencia :: operator + (void){
+	return(*this);
+}
+Secuencia Secuencia :: operator + (const Secuencia & otro){
+	Secuencia aux;
+	aux = (*this);
+
+	aux.aniade(otro);
+
+	return aux;
+}
+
+Secuencia Secuencia :: operator - (void){
+	Secuencia aux;
+	aux = (*this);
+
+	for(int i = 0; i < aux.getTotalUtilizados(); i++){
+		aux.setValor((-1)*aux.getValor(i), i);
+	}
+
+	return aux;
 }
